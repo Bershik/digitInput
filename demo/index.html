@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Digit Input</title>
+	<style type="text/css">
+		.input{
+			border-radius: 0;
+			border: none;
+			background: #fff;
+			box-shadow: 0 0 2px;
+			padding: 5px 15px;
+		}
+		.input-error{
+			box-shadow: 0 0 2px red;
+		}
+		.error{
+			display: block;
+			color: red;
+			margin: 5px 0;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" class="input js-digits">
+	</div>
+	
+	<script type="text/javascript" src="../lib/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../dist/jquery.digitInput.js"></script>
+	<script type="text/javascript">
+		$('.js-digits').digits({
+			selectable: false,
+			insert: true,
+			dragndrop: false,
+			inputErrorClass: 'input-error',
+			errorClass: 'error',
+			errorText: 'only digits allowed!',
+		});
+	</script>
+	
+</body>
+</html>
