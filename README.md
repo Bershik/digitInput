@@ -23,7 +23,7 @@ Next, call the digitInput function for those inputs you wish to have masked.
     $('.js-digits').digits();
   });
   ```
-Live [DEMO](https://jsfiddle.net/Bershik/bpjb5f11/) on jsFiddle.
+Live [DEMO](https://jsfiddle.net/Bershik/bpjb5f11/1/) on jsFiddle.
 
 Options
 --------
