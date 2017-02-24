@@ -67,11 +67,11 @@ Example:
 
 ### errorElement
 There is a possibility to define tag element for error text behind input when pasting value is not a digits. Only if pasting value with copy/paste or drag'n'drop is allowed.
-Default: '';
+Default: 'span';
 
 Example:
   ```html
-  $('.js-digits').digits({errorClass: 'error'});
+  $('.js-digits').digits({errorElement: 'p'});
   ```
 
 ### errorClass
