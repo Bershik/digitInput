@@ -13,6 +13,7 @@
 			insert: true,
 			dragndrop: true,
 			inputErrorClass:'',
+			errorElement: 'span',
 			errorClass:'',
 			errorText: '',
 		}, options);
@@ -21,6 +22,7 @@
 		$.fn.digits.insert = settings.insert;
 		$.fn.digits.dragndrop = settings.dragndrop;
 		$.fn.digits.inputErrorClass = settings.inputErrorClass;
+		$.fn.digits.errorElement = settings.errorElement;
 		$.fn.digits.errorClass = settings.errorClass;
 		$.fn.digits.errorText = settings.errorText;
 
@@ -84,9 +86,10 @@
 				if(!/([0-9])/g.test(this.value)){
 					event.preventDefault();
 					$(this).addClass($.fn.digits.inputErrorClass);
-					if($(this).parent().has('span.'+$.fn.digits.errorClass).length == 0){
-						console.log($(this).parent().has('span.'+$.fn.digits.errorClass));
-						$(this).parent().append('<span class="'+$.fn.digits.errorClass+'">'+$.fn.digits.errorText+'</span>');
+					var hasError = $(this).parent().has($.fn.digits.errorElement);
+					if(hasError.length == 0){
+						var newError = $(document.createElement($.fn.digits.errorElement)).addClass($.fn.digits.errorClass).text($.fn.digits.errorText);
+						$(this).parent().append(newError);
 					}
 					return false;
 				}
@@ -95,7 +98,7 @@
 
 		this.on("focusout blur", function(event){
 			$(this).removeClass($.fn.digits.inputErrorClass);
-			$(this).parent().find('span.'+$.fn.digits.errorClass).remove();
+			$(this).parent().find($.fn.digits.errorElement).remove();
 		})
 
 		return this;
