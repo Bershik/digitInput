@@ -65,8 +65,8 @@ Example:
   $('.js-digits').digits({inputErrorClass: 'error-input'});
   ```
 
-### errorClass
-There is a possibility to define class name for error text behind input when pasting value is not a digits only if pasting value with copy/paste or drag'n'drop is allowed.
+### errorElement
+There is a possibility to define tag element for error text behind input when pasting value is not a digits. Only if pasting value with copy/paste or drag'n'drop is allowed.
 Default: '';
 
 Example:
@@ -74,9 +74,17 @@ Example:
   $('.js-digits').digits({errorClass: 'error'});
   ```
 
+### errorClass
+There is a possibility to define class name for error text behind input when pasting value is not a digits. Only if pasting value with copy/paste or drag'n'drop is allowed.
+Default: '';
+
+Example:
+  ```html
+  $('.js-digits').digits({errorClass: 'error'});
+  ```
 
 ### errorText
-There is a possibility to define error text behind input when pasting value is not a digits only if pasting value with copy/paste or drag'n'drop is allowed.
+There is a possibility to define error text behind input when pasting value is not a digits. Only if pasting value with copy/paste or drag'n'drop is allowed.
 Default: '';
 
 Example:
